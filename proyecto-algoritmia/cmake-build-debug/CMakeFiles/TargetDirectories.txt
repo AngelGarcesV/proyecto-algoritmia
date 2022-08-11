@@ -1,0 +1,3 @@
+/home/angel/Documents/c++-projects/universidad/proyecto-algoritmia/cmake-build-debug/CMakeFiles/proyecto_algoritmia.dir
+/home/angel/Documents/c++-projects/universidad/proyecto-algoritmia/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/angel/Documents/c++-projects/universidad/proyecto-algoritmia/cmake-build-debug/CMakeFiles/rebuild_cache.dir
