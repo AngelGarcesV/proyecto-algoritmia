@@ -26,8 +26,8 @@ void VolumenCubo();
 
 //Funciones Temperaturas
 void Tempe_CelsiusKelvin();
-void Tempe_CelsiusFarenh();
-void Tempe_FarenhCelsius();
+void Tempe_KelvinFahrenh();
+void Tempe_FahrenhCelsius();
 
 //Funciones Monedas
 void Moneda_PesoDolar();
@@ -226,10 +226,13 @@ void submenu_Temperaturas() //sub menu de las distintas mediciones de temperatur
         switch (opcion)
         {
             case 1:
+                Tempe_CelsiusKelvin();
                 break;
             case 2:
+                Tempe_KelvinFahrenh();
                 break;
             case 3:
+                Tempe_FahrenhCelsius();
                 break;
             case 4: repetir = false;
                 break;
@@ -392,11 +395,11 @@ void AreaTriangulo()
     float lado2 = 0;
     float lado3 = 0;
 
-    cout<<"ingrese la medida en metros del lado #1"<<endl;
+    cout<<"Ingrese la medida en metros del lado #1"<<endl;
     cin>>lado1;
-    cout<<"ingrese la medida en metros del lado #2"<<endl;
+    cout<<"Ingrese la medida en metros del lado #2"<<endl;
     cin>>lado2;
-    cout<<"ingrese la medida en metros del lado #3"<<endl;
+    cout<<"Ingrese la medida en metros del lado #3"<<endl;
     cin>>lado3;
 
     float sp=(lado1+lado2+lado3)/2;
@@ -404,11 +407,11 @@ void AreaTriangulo()
     if(spl>0)
     {
         float areat= sqrt(sp*spl);
-        cout<<"el area del triangulo es "<<areat<<endl;
+        cout<<"El area del triangulo es "<<areat<<endl;
     }
 
     else{
-        cout<<"las medidas ingresadas no coinciden con las de un triangulo"<<endl;
+        cout<<"Las medidas ingresadas no coinciden con las de un triangulo"<<endl;
     }
 
 }
@@ -427,9 +430,9 @@ void AreaRectangulo()
 {
     float a  = 0;
     float b = 0;
-    cout<<"ingrese la medida en metros de la base del rectangulo: "<<endl;
+    cout<<"Ingrese la medida en metros de la base del rectangulo: "<<endl;
     cin>>a;
-    cout<<"ingrese la medida en metros de la altura del rectangulo: "<<endl;
+    cout<<"Ingrese la medida en metros de la altura del rectangulo: "<<endl;
     cin>>b;
     if(a != b)
     {
@@ -438,14 +441,14 @@ void AreaRectangulo()
     }
     else
     {
-        cout<<"ups! eso es un cuadrado, por favor ingresa la opcion #4";
+        cout<<"UPSS! eso es un cuadrado, por favor ingresa la opcion #4";
     }
 }
 
 void AreaCuadrado()
 {
     float a = 0;
-    cout << "ingrese la medida en metros de un lado: ";
+    cout << "Ingrese la medida en metros de un lado: ";
     cin >> a;
     float res = pow(a,2);
     cout << "El area del cuadrado es de: "<< res <<"metros cuadrados";
@@ -470,17 +473,29 @@ void VolumenCubo()
 //Funciones Temperaturas
 void Tempe_CelsiusKelvin()
 {
-
+    float cel = 0;
+    cout<<"Ingrese la temperatura en grados celsius: "<<endl;
+    cin>>cel;
+    float res = cel + 273.15;
+    cout<<"La temperatura en grados kelvin es de: "<<res<<"k"; 
 }
 
-void Tempe_CelsiusFarenh()
+void Tempe_KelvinFahrenh()
 {
-
+    float Kel = 0;
+    cout<<"Ingrese la temperatura en grados Kelvin: "<<endl;
+    cin>>Kel;
+    float res = (Kel - 273.15)* 9/5 + 32;
+    cout<<"La temperatura en grados Fahrenheit es de: "<<res<<"F";
 }
 
-void Tempe_FarenhCelsius()
+void Tempe_FahrenhCelsius()
 {
-
+    float fahren = 0;
+    cout<<"Ingrese la temperatura en grados Fahrenheit: "<<endl;
+    cin>>fahren;
+    float res = (fahren - 32) * 5/9;
+    cout<<"La temperatura en grados Celsius es de: "<<res<<"C";
 }
 
 //Funciones Monedas
@@ -489,9 +504,9 @@ void Moneda_PesoDolar()
 {
     float dolar;
     float pesos;
-    cout<<"ingrese el precio actual de USD en pesos COP: ";
+    cout<<"Ingrese el precio actual de USD en pesos COP: ";
     cin>>dolar;
-    cout<<"ingrese la cantidad de COP que desea convertir a USD: ";
+    cout<<"Ingrese la cantidad de COP que desea convertir a USD: ";
     cin>>pesos;
     float res = pesos/dolar;
     cout<<pesos<<" COP en USD son: "<<res<<"$";
@@ -501,9 +516,9 @@ void Moneda_PesoEuro()
 {
     float euros;
     float pesos;
-    cout<<"ingrese el precio actual de EUR en pesos COP: ";
+    cout<<"Ingrese el precio actual de EUR en pesos COP: ";
     cin>>euros;
-    cout<<"ingrese la cantidad de COP que desea convertir a EUR: ";
+    cout<<"Ingrese la cantidad de COP que desea convertir a EUR: ";
     cin>>pesos;
     float res = pesos/euros;
     cout<<pesos<<" COP en EUR son: "<<res<<"€";
@@ -513,9 +528,9 @@ void Moneda_DolarPeso()
 {
     float dolar;
     float cantidad;
-    cout<<"ingrese el precio actual de USD en pesos COP: ";
+    cout<<"Ingrese el precio actual de USD en pesos COP: ";
     cin>>dolar;
-    cout<<"ingrese la cantidad de USD que desea convertir a COP";
+    cout<<"Ingrese la cantidad de USD que desea convertir a COP";
     cin>>cantidad;
     float res = dolar*cantidad;
     cout << cantidad << "$ USD convertido a COP son: " <<res;
@@ -525,9 +540,9 @@ void Moneda_EuroPeso()
 {
     float euros;
     float cantidad;
-    cout<<"ingrese el precio actual de USD en pesos COP: ";
+    cout<<"Ingrese el precio actual de USD en pesos COP: ";
     cin>>euros;
-    cout<<"ingrese la cantidad de USD que desea convertir a COP";
+    cout<<"Ingrese la cantidad de USD que desea convertir a COP";
     cin>>cantidad;
     float res = euros*cantidad;
     cout << cantidad << "$ USD convertido a COP son: " <<res;
@@ -537,9 +552,9 @@ void Moneda_EuroDolar()
 {
     float dolar;
     float cantidad;
-    cout<<"ingrese el precio actual de USD en pesos EUR: ";
+    cout<<"Ingrese el precio actual de USD en pesos EUR: ";
     cin>>dolar;
-    cout<<"ingrese la cantidad de EUR a convertir: ";
+    cout<<"Ingrese la cantidad de EUR a convertir: ";
     cin>>cantidad;
     float res = dolar*cantidad;
     cout<<dolar<<"$ en Euros son: "<<res;
@@ -548,9 +563,9 @@ void Moneda_DolarEuro()
 {
     float dolar;
     float euro;
-    cout<<"ingrese el precio actual de USD en pesos EUR: ";
+    cout<<"Ingrese el precio actual de USD en pesos EUR: ";
     cin>>dolar;
-    cout<<"ingrese la cantidad de EUR a convertir: ";
+    cout<<"Ingrese la cantidad de EUR a convertir: ";
     cin>>euro;
     float res = dolar/euro;
     cout<<dolar<<"$ en Euros son: "<<res;
