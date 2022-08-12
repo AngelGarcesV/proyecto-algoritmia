@@ -71,7 +71,7 @@ void menu() //menu principal
 
     do
     {
-        
+        system("clear||cls");
 
         cout<< "\n\t\t\t\t\t  Hola este es nuestro sistema de menu " <<endl;
         cout << "\t\t\t\t\t----------------------------------------" << endl;
@@ -88,7 +88,7 @@ void menu() //menu principal
         cout<< " [7] Salir  " <<endl;
         cout<< " Ingrese una opcion  " <<endl;
         cin>>opcion;
-
+        system("clear||cls");
 
         switch (opcion)
         {
@@ -139,16 +139,16 @@ void submenu_Areas() //sub menu de areas encontramos triangulos y demas
         cout<< " [5] Volver al menu  " <<endl;
         cout<< " Ingrese una opcion  " <<endl;
         cin>>opcion;
-
+        system("clear||cls");
         switch (opcion)
         {
             case 1: AreaTriangulo();
                 break;
-            case 2:
+            case 2: AreaCirculo();
                 break;
-            case 3:
+            case 3: AreaRectangulo();
                 break;
-            case 4:
+            case 4: AreaCuadrado();
                 break;
             case 5: repetir = false;
                 break;
@@ -159,7 +159,7 @@ void submenu_Areas() //sub menu de areas encontramos triangulos y demas
     } while (repetir & opcion<=5);
 
 
-    system("cls");
+    system("clear||cls");
 
 }
 
@@ -183,7 +183,7 @@ void submenu_Volumenes() //sub menu volumenes de la esfera y otras figuras
         cout<< " [4] Volver al menu  " <<endl;
         cout<< " Ingrese una opcion  " <<endl;
         cin>>opcion;
-        system("cls");
+        system("clear||cls");
         switch (opcion)
         {
             case 1:
@@ -201,7 +201,7 @@ void submenu_Volumenes() //sub menu volumenes de la esfera y otras figuras
     } while (repetir & opcion<=4);
 
 
-    system("cls");
+    system("clear||cls");
 
 }
 
@@ -222,7 +222,7 @@ void submenu_Temperaturas() //sub menu de las distintas mediciones de temperatur
         cout<< " [4] Volver al menu  " <<endl;
         cout<< " Ingrese una opcion  " <<endl;
         cin>>opcion;
-        system("cls");
+        system("clear||cls");
         switch (opcion)
         {
             case 1:
@@ -240,7 +240,7 @@ void submenu_Temperaturas() //sub menu de las distintas mediciones de temperatur
     } while (repetir & opcion<=4);
 
 
-    system("cls");
+    system("clear||cls");
 
 }
 
@@ -266,20 +266,20 @@ void submenuMonedas()//pasar de pesos a otras monedas y mas
 
         cout<< " Ingrese una opcion  " <<endl;
         cin>>opcion;
-        system("cls");
+        system("clear||cls");
         switch (opcion)
         {
-            case 1:
+            case 1: Moneda_PesoDolar();
                 break;
-            case 2:
+            case 2: Moneda_PesoEuro();
                 break;
-            case 3:
+            case 3:Moneda_DolarPeso();
                 break;
-            case 4:
+            case 4:Moneda_EuroPeso();
                 break;
-            case 5:
+            case 5:Moneda_EuroDolar();
                 break;
-            case 6:
+            case 6:Moneda_DolarEuro();
                 break;
             case 7: repetir = false;
                 break;
@@ -291,7 +291,7 @@ void submenuMonedas()//pasar de pesos a otras monedas y mas
     } while (repetir & opcion<=7);
 
 
-    system("cls");
+    system("clear||cls");
 }
 
 void submenuArreglos_Matrices()//arreglos matrices entre otros
@@ -314,7 +314,7 @@ void submenuArreglos_Matrices()//arreglos matrices entre otros
         cout<< " [6] Volver al menu  " <<endl;
         cout<< " Ingrese una opcion  " <<endl;
         cin>>opcion;
-        system("cls");
+        system("clear||cls");
         switch (opcion)
         {
             case 1:
@@ -336,7 +336,7 @@ void submenuArreglos_Matrices()//arreglos matrices entre otros
     } while (repetir & opcion<=6);
 
 
-    system("cls");
+    system("clear||cls");
 }
 
 void submenuVarios() //desde fibonacci y mas
@@ -358,7 +358,7 @@ void submenuVarios() //desde fibonacci y mas
         cout<< " [6] Volver al menu  " <<endl;
         cout<< " Ingrese una opcion  " <<endl;
         cin>>opcion;
-        system("cls");
+        system("clear||cls");
         switch (opcion)
         {
             case 1:
@@ -380,7 +380,7 @@ void submenuVarios() //desde fibonacci y mas
     } while (repetir & opcion<=6);
 
 
-    system("cls");
+    system("clear||cls");
 
 }
 
@@ -416,17 +416,39 @@ void AreaTriangulo()
 
 void AreaCirculo()
 {
-
+    float radio = 0;
+    cout<<"Ingrese la medida en metros del radio del circulo: "<<endl;
+    cin>>radio;
+    float res = M_PI * (pow(radio,2));
+    cout<<"El area es "<< res <<" metros cuadrados";
 }
 
 void AreaRectangulo()
 {
-
+    float a  = 0;
+    float b = 0;
+    cout<<"ingrese la medida en metros de la base del rectangulo: "<<endl;
+    cin>>a;
+    cout<<"ingrese la medida en metros de la altura del rectangulo: "<<endl;
+    cin>>b;
+    if(a != b)
+    {
+        float res = a * b;
+        cout<<"El area del rectangulo es: " << res << "metros cuadrados";
+    }
+    else
+    {
+        cout<<"ups! eso es un cuadrado, por favor ingresa la opcion #4";
+    }
 }
 
 void AreaCuadrado()
 {
-
+    float a = 0;
+    cout << "ingrese la medida en metros de un lado: ";
+    cin >> a;
+    float res = pow(a,2);
+    cout << "El area del cuadrado es de: "<< res <<"metros cuadrados";
 }
 
 //Funcion Volúmenes
@@ -465,31 +487,73 @@ void Tempe_FarenhCelsius()
 
 void Moneda_PesoDolar()
 {
-
+    float dolar;
+    float pesos;
+    cout<<"ingrese el precio actual de USD en pesos COP: ";
+    cin>>dolar;
+    cout<<"ingrese la cantidad de COP que desea convertir a USD: ";
+    cin>>pesos;
+    float res = pesos/dolar;
+    cout<<pesos<<" COP en USD son: "<<res<<"$";
 }
 
 void Moneda_PesoEuro()
 {
-
+    float euros;
+    float pesos;
+    cout<<"ingrese el precio actual de EUR en pesos COP: ";
+    cin>>euros;
+    cout<<"ingrese la cantidad de COP que desea convertir a EUR: ";
+    cin>>pesos;
+    float res = pesos/euros;
+    cout<<pesos<<" COP en EUR son: "<<res<<"€";
 }
 
 void Moneda_DolarPeso()
 {
-
+    float dolar;
+    float cantidad;
+    cout<<"ingrese el precio actual de USD en pesos COP: ";
+    cin>>dolar;
+    cout<<"ingrese la cantidad de USD que desea convertir a COP";
+    cin>>cantidad;
+    float res = dolar*cantidad;
+    cout << cantidad << "$ USD convertido a COP son: " <<res;
 }
 
 void Moneda_EuroPeso()
 {
-
+    float euros;
+    float cantidad;
+    cout<<"ingrese el precio actual de USD en pesos COP: ";
+    cin>>euros;
+    cout<<"ingrese la cantidad de USD que desea convertir a COP";
+    cin>>cantidad;
+    float res = euros*cantidad;
+    cout << cantidad << "$ USD convertido a COP son: " <<res;
 }
 
 void Moneda_EuroDolar()
 {
-
+    float dolar;
+    float cantidad;
+    cout<<"ingrese el precio actual de USD en pesos EUR: ";
+    cin>>dolar;
+    cout<<"ingrese la cantidad de EUR a convertir: ";
+    cin>>cantidad;
+    float res = dolar*cantidad;
+    cout<<dolar<<"$ en Euros son: "<<res;
 }
 void Moneda_DolarEuro()
 {
-
+    float dolar;
+    float euro;
+    cout<<"ingrese el precio actual de USD en pesos EUR: ";
+    cin>>dolar;
+    cout<<"ingrese la cantidad de EUR a convertir: ";
+    cin>>euro;
+    float res = dolar/euro;
+    cout<<dolar<<"$ en Euros son: "<<res;
 }
 
 //Funcion Arreglos y matrices
