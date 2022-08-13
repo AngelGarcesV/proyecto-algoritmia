@@ -365,14 +365,19 @@ void submenuVarios() //desde fibonacci y mas
         switch (opcion)
         {
             case 1:
+                DistanciaPuntos();
                 break;
             case 2:
+                RaicesFuncionCuadratica();
                 break;
             case 3:
+                Factorial();
                 break;
             case 4:
+                Fibonacci();
                 break;
             case 5:
+                Primo();
                 break;
             case 6: repetir = false;
                 break;
@@ -600,12 +605,39 @@ void BuscarMatrices()
 //funcion varios
 void DistanciaPuntos()
 {
-
+    float x1 = 0, x2 = 0, y1 = 0, y2 = 0;
+    cout<<"Ingrese la posicion en x1: "<<endl;
+    cin>>x1;
+    cout<<"Ingrese la posicion en y1: "<<endl;
+    cin>>y1;
+    cout<<"Ingrese la posicion en x2: "<<endl;
+    cin>>x2;
+    cout<<"Ingrese la posicion en y2: "<<endl;
+    cin>>y2;
+    float rest_x = x2 - x1;
+    float rest_y = y2 - y1;
+    float answ = sqrt(pow(rest_x,2) + pow(rest_y,2));
+    cout<< "La distancia entre los dos puntos es de: " << answ<<endl;
 }
 
 void RaicesFuncionCuadratica()
 {
+    cout<<"Este programa sirve para solucionar una ecuacion de segundo grado"<<endl;
+    cout<<"es decir para solucionar la ecuacion ax² + bx +c"<<endl;
+    int a = 0, b = 0, c = 0;
+    cout<<"ingrese el coeficiente a: "<<endl;
+    cin >> a;
+    cout<<"Ingrese el coeficiente b: "<<endl;
+    cin >> b;
+    cout<<"Ingrese el coeficiente c" << endl;
+    cin >> c;
 
+    float conSqrt = pow(b,2) -4 * (a *c);
+    float raiz = sqrt(conSqrt);
+    float answ1 = ((-1 * b) + raiz) / (2*a);
+    float answ2 = ((-1 * b) - raiz) / (2*a);
+    cout<<"El resultado #1 es: "<< answ1<<endl;
+    cout<<"El resultado #2 es: "<< answ2<<endl;
 }
 
 void Factorial()
@@ -615,11 +647,69 @@ void Factorial()
 
 void Fibonacci()
 {
+    long long a = 0;
+    long long b = 1;
+    long long opc = 0;
+    long long suma = 0;
+    cout<<"Ingrese el numero de veces que desea repetir la sucesion fibonacci: "<<endl;
+    cout<<"El numero maximo admitido es de 92."<<endl;
 
+    cin>> opc;
+
+    for(int i = 1; i < opc; i++)
+    {   
+
+        suma = a + b;
+        a = b;
+        b = suma;
+    }
+    if( opc == 1)
+    {
+        cout << 1 <<endl;
+    }
+    else if( opc > 92)
+    {
+        cout<<"upss!!, a partir de aqui tenemos un error ;(("<<endl;
+    }
+    else
+    {
+        cout<<suma<<endl;
+    }
+    
 }
 
 void Primo()
 {
+    int n = 0;
+    cout<<"ingrese un numero: "<<endl;
+    cin>>n;
+
+    if (n == 2||n == 3||n == 5||n == 7)
+    {
+        cout<<"es numero primo";
+    }
+    else if (n == 1)
+    {
+        cout<<"El numero no es considerado par ni ";
+    }
+    else if(n%2 == 0)
+    {
+        cout<<"no es numero primo";
+    }
+    else if (n%3 == 0)
+    {
+        cout<<"no es numero primo";
+    }else if (n%5 == 0)
+    {
+        cout<<"no es numero primo";
+    }else if (n%7 == 0)
+    {
+        cout<<"no es numero primo";
+    }
+    else
+    {
+        cout<<"es un numero primo";
+    }
 
 }
 
